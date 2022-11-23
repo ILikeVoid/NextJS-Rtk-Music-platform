@@ -1,4 +1,24 @@
-.nav {
-    background-color: #f78e25;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #e8eaed;
     height: 80px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+}
+
+.nav a{
+    border-bottom: 2px solid;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #736d73;
+    font-family: 'Anton', sans-serif;
 }

@@ -1,12 +1,22 @@
 import s from './Layout.module.css'
+import Image from "next/image";
 import Link from "next/link";
+import logo from './../../assets/Images/NovaLogo-2.png'
+
 
 export const Layout = ({children}) => {
     return (
         <>
-            <nav className={s.nav}>
-                <Link href="/beats">Beats</Link>
-            </nav>
+            <header className={s.header}>
+                <div className={s.logo}>
+                    <Link href="/"><Image src={logo} alt='logo'/></Link>
+                </div>
+                <nav className={s.nav}>
+                    <Link href="/beats">Listening</Link>
+                    <Link href="/artists">Artists</Link>
+                    <Link href="/battle">Battle</Link>
+                </nav>
+            </header>
             <main>{children}</main>
         </>
     )

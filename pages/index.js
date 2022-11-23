@@ -1,10 +1,11 @@
 import s from '../styles/Home.module.css'
+import Head from "next/head";
 
-const Home = (props) => {
+const Home = () => {
 
     return (
         <>
-            <h1 className='text-3xl'>
+            <h1>
                 Hello!
             </h1>
         </>
