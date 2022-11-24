@@ -1,7 +1,11 @@
+import Head from "next/head";
+
 const Artists = () => {
     return(
         <>
-            <h1>Artists</h1>
+            <Head>
+                <title>NovaBeats | Artists</title>
+            </Head>
         </>
     )
 }
