@@ -1,7 +1,9 @@
 import '../styles/globals.css'
 import {Layout} from "../components/layouts/Layout";
+import {Provider} from "react-redux";
+import store from "../redux/store";
 
-function MyApp({Component, pageProps}) {
+function App({Component, pageProps}) {
     return (
         <Layout>
             <Component {...pageProps}/>
@@ -9,4 +11,12 @@ function MyApp({Component, pageProps}) {
     )
 }
 
-export default MyApp
+const MainApp = () => {
+    return(
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    )
+}
+
+export default MainApp

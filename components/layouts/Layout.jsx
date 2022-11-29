@@ -17,7 +17,7 @@ export const Layout = ({children}) => {
                     <Link href="/battle">Battle</Link>
                 </nav>
             </header>
-            <main>{children}</main>
+            <main className={s.content}>{children}</main>
         </>
     )
 }
