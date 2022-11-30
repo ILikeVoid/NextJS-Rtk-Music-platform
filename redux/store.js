@@ -1,12 +1,11 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {musicReducer} from "./music-reducer"
+import {configureStore} from "@reduxjs/toolkit";
+import {musicSlice} from "./music-reducer";
 
-const reducers = combineReducers({
-    musicPage: musicReducer
-})
 
 let store = configureStore({
-    reducer: reducers
+    reducer: {
+        music: musicSlice.reducer
+    }
 })
 
 

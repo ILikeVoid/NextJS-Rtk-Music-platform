@@ -3,20 +3,15 @@ import {Layout} from "../components/layouts/Layout";
 import {Provider} from "react-redux";
 import store from "../redux/store";
 
-function App({Component, pageProps}) {
+const MyApp = ({Component, pageProps}) => {
     return (
         <Layout>
-            <Component {...pageProps}/>
+            <Provider store={store}>
+                <Component {...pageProps}/>
+            </Provider>
         </Layout>
     )
 }
 
-const MainApp = () => {
-    return(
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    )
-}
 
-export default MainApp
+export default MyApp

@@ -1,4 +1,4 @@
-const ADD_MUSIC = 'ADD-MUSIC'
+import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     musics: [
@@ -9,22 +9,16 @@ const initialState = {
     ]
 }
 
-export const musicReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_MUSIC:
-            let newMusic = {
-                id: 5,
-                artist: action.newMusicArtist,
-                name: action.newMusicName
+export const musicSlice = createSlice({
+    name: "music",
+    initialState,
+    reducers: {
+        addMusic: (state, action) => {
+            state.musics.push(action.payload)
             }
-            return {
-                ...state,
-                musics: [...state.musics, newMusic],
-            }
-        default:
-            return state
+        }
     }
-}
+)
 
-export const addMusicSuccess = (newMusicArtist, newMusicName) => ({type: ADD_MUSIC, newMusicArtist, newMusicName})
-
+export const {addMusic} = musicSlice.actions
+export default musicSlice.reducer

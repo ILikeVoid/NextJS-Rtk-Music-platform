@@ -1,18 +1,16 @@
 import s from '../styles/Home.module.css'
 import Head from "next/head";
-import {useForm} from "react-hook-form";
 import {FiSearch} from 'react-icons/fi'
-import {connect} from "react-redux";
-import {addMusicSuccess} from "../redux/music-reducer";
-import {compose} from "@reduxjs/toolkit";
+import {useSelector} from "react-redux";
+import {addMusic} from "../redux/music-reducer";
+import Music from "../components/Music/Music";
+import {useForm} from "react-hook-form"
 
 const Home = () => {
+    const {register, handleSubmit, formState: {errors}} = useForm()
+    const music = useSelector((state) => state.music.musics)
 
-    const {handleSubmit, register, formState:{errors}} = useForm()
-
-    const onSubmit = (data) => {
-        alert(`Search ${data.track}`)
-    }
+    const onSubmit = (data) => console.log(data)
 
     return (
         <div className={s.home}>
@@ -20,20 +18,21 @@ const Home = () => {
                 <title>NovaBeats | Home</title>
             </Head>
             <div>
-                <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-                    <input {...(register("track", {required: "error"}))}
-                           type="text"
-                           placeholder="Search any track..."/>
-                    <button><FiSearch size={20}/></button>
-                    {errors.track && <div style={{color:"red"}}>{errors.track.message}</div>}
+                {/*<form className={s.form}>*/}
+                {/*    <input type="text" placeholder="Search any track..."/>*/}
+                {/*    <button><FiSearch size={20}/></button>*/}
+                {/*</form>*/}
+                <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+                    <input type='text' placeholder="Artist" {...register("artist")}/>
+                    <input type='text' placeholder='Name' {...register("name", {required:true})}/>
+                    {errors && <div>{errors.name}</div>}
+                    <button>Submit</button>
                 </form>
+                {music.map(m => <Music key={m.id} name={m.name} artist={m.artist}/>)}
             </div>
         </div>
     )
 }
 
-const mapStateToProps = (state) =>({
-    musics: state.musicPage.musics
-})
 
-export default compose(connect(mapStateToProps, {addMusicSuccess})(Home))
+export default Home
