@@ -9,7 +9,7 @@ export const Layout = ({children}) => {
         <>
             <header className={s.header}>
                 <div className={s.logo}>
-                    <Link href="/"><Image src={logo} alt='logo'/></Link>
+                    <Link href="/"><Image priority={true} src={logo} alt='logo'/></Link>
                 </div>
                 <nav className={s.nav}>
                     <Link href="/beats">Listening</Link>
@@ -17,7 +17,7 @@ export const Layout = ({children}) => {
                     <Link href="/battle">Battle</Link>
                 </nav>
             </header>
-            <main className={s.content}>{children}</main>
+            <main>{children}</main>
         </>
     )
 }
