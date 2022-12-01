@@ -11,10 +11,7 @@ const Home = () => {
             <Head>
                 <title>NovaBeats | Home</title>
             </Head>
-            <div>
-                <MusicForm />
-                <Musics />
-            </div>
+
         </div>
     )
 }

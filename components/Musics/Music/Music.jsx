@@ -1,10 +1,16 @@
-import s from "../Musics.module.css";
+import s from "./Music.module.css";
 
-function Music({artist, name}) {
+function Music({index, artist, name}) {
+
+    let number = index + 1
+
     return (
         <div className={s.music}>
-            <span>{artist}</span>
-            <span>{name}</span>
+            <div className={s.music_id}><span>{number}</span></div>
+            <div className={s.title}>
+                <div className={s.name}><span>{name}</span></div>
+                <div className={s.artist}><span>{artist}</span></div>
+            </div>
         </div>
 
     )

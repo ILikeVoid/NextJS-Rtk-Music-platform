@@ -1,19 +1,16 @@
 import s from "./MusicForm.module.css"
 import {useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {addMusic} from "../../redux/music-reducer";
-import artists from "../../pages/artists";
+import {v4} from "uuid";
 
 const MusicForm = () => {
-    const {register, reset, handleSubmit, formState: {errors}} = useForm()
+    const {register, reset, handleSubmit, formState:{isDirty, isValid}} = useForm()
     const dispatch = useDispatch()
-    const musics = useSelector((state) => state.music.musics)
-
-    const musicId = Number(musics.slice(-1).map((value) => value.id)) + 1
 
     const onSubmit = (data) => {
         const music = {
-            id: musicId,
+            id: v4,
             artist: data.artist,
             name: data.name
         }
@@ -28,9 +25,9 @@ const MusicForm = () => {
     return (
         <>
             <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-                <input type='text' placeholder="Artist" {...register("artist", {required: true})}/>
+                <input type='text' placeholder="Artist(s)" {...register("artist", {required: true})}/>
                 <input type='text' placeholder='Name' {...register("name", {required: true})}/>
-                <button>Submit</button>
+                <button disabled={!isDirty || !isValid}>Add</button>
             </form>
         </>
     )

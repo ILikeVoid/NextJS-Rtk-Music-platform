@@ -12,12 +12,12 @@ export const Layout = ({children}) => {
                     <Link href="/"><Image priority={true} src={logo} alt='logo'/></Link>
                 </div>
                 <nav className={s.nav}>
-                    <Link href="/beats">Listening</Link>
+                    <Link href="/listen">Listen</Link>
                     <Link href="/artists">Artists</Link>
                     <Link href="/battle">Battle</Link>
                 </nav>
             </header>
-            <main>{children}</main>
+            <main className={s.child}>{children}</main>
         </>
     )
 }

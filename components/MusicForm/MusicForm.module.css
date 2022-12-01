@@ -9,6 +9,14 @@
     padding-left: 30px;
     width: 100%;
     height: 50px;
+    border-radius: 10px;
+}
+.form input:focus {
+    outline-color: violet;
+}
+
+.form input:hover{
+    background-color: rgba(216,216,216,0.94);
 }
 
 .form button {
@@ -17,4 +25,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+}
+
+.form button:hover{
+    background-color: darkseagreen;
+}
+
+.form button:disabled{
+    background-color: #e8e8e8;
 }

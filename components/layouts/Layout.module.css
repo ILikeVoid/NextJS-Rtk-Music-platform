@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .header {
+    background-color: white;
     position: fixed;
     display: flex;
     align-items: center;
@@ -23,4 +24,10 @@
     font-weight: bold;
     color: #736d73;
     font-family: 'Anton', sans-serif;
+}
+
+.child{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 90px;
 }

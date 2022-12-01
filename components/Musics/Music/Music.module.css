@@ -1,3 +1,22 @@
 .music {
+    margin-top: 10px;
     display: flex;
+    align-items: center;
+}
+
+.music_id {
+    padding-left: 20px;
+}
+
+.title{
+    margin-left: 20px;
+}
+
+.title .name {
+    font-size: 20px;
+}
+
+.title .artist{
+    color: darkgray;
+    font-size: 15px;
 }
