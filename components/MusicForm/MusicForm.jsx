@@ -2,7 +2,7 @@ import s from "./MusicForm.module.css"
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 import {addMusic} from "../../redux/music-reducer";
-import {v4} from "uuid";
+import {v4} from 'uuid'
 
 const MusicForm = () => {
     const {register, reset, handleSubmit, formState:{isDirty, isValid}} = useForm()
@@ -10,7 +10,7 @@ const MusicForm = () => {
 
     const onSubmit = (data) => {
         const music = {
-            id: v4,
+            id: v4(),
             artist: data.artist,
             name: data.name
         }

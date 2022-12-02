@@ -5,7 +5,7 @@ import Musics from "../components/Musics/Musics";
 
 const Listen = () => {
     return (
-        <div className={s.home}>
+        <div className={s.listen}>
             <Head>
                 <title>NovaBeats | Listen</title>
             </Head>
