@@ -10,10 +10,9 @@ export const Layout = ({children}) => {
 
     return (
         <>
-            <header id='header' className={s.header}
+            <header className={s.header}
                     style={{
                         backgroundColor: router.route === "/" ? "" : "white",
-                        color: router.route === "/" ? "#736d73" : "#736d73"
                     }}>
                 <div className={s.logo}>
                     <Link href="/"><Image priority={true} src={logo} alt='logo'/></Link>
